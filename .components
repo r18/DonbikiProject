@@ -1,0 +1,9 @@
+---
+:orm: activerecord
+:test: rspec
+:mock: none
+:script: jquery
+:renderer: slim
+:stylesheet: none
+:namespace: DonbikiProject
+:migration_format: number
