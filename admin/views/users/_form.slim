@@ -1,0 +1,31 @@
+- error = @user.errors.include?(:name)
+fieldset class='control-group#{error ? ' has-error' : ''}'
+  = f.label :name, :class => 'control-label'
+  div class='controls'
+    = f.text_field :name, :class => 'form-control input-large input-with-feedback', :autofocus => true
+    span class='help-inline' = error ? f.error_message_on(:name, :class => 'text-error') : pat(:example)
+- error = @user.errors.include?(:userId)
+fieldset class='control-group#{error ? ' has-error' : ''}'
+  = f.label :userId, :class => 'control-label'
+  div class='controls'
+    = f.text_field :userId, :class => 'form-control input-large input-with-feedback'
+    span class='help-inline' = error ? f.error_message_on(:userId, :class => 'text-error') : pat(:example)
+- error = @user.errors.include?(:dtweetId)
+fieldset class='control-group#{error ? ' has-error' : ''}'
+  = f.label :dtweetId, :class => 'control-label'
+  div class='controls'
+    = f.text_field :dtweetId, :class => 'form-control input-large input-with-feedback'
+    span class='help-inline' = error ? f.error_message_on(:dtweetId, :class => 'text-error') : pat(:example)
+- error = @user.errors.include?(:turnTweetId)
+fieldset class='control-group#{error ? ' has-error' : ''}'
+  = f.label :turnTweetId, :class => 'control-label'
+  div class='controls'
+    = f.text_field :turnTweetId, :class => 'form-control input-large input-with-feedback'
+    span class='help-inline' = error ? f.error_message_on(:turnTweetId, :class => 'text-error') : pat(:example)
+
+div class="form-actions"
+  = f.submit pat(:save), :class => 'btn btn-primary'
+  |&nbsp;
+  = f.submit pat(:save_and_continue), :class => 'btn btn-info', :name => 'save_and_continue'
+  |&nbsp;
+  = link_to pat(:cancel), url(:users, :index), :class => 'btn btn-default'

@@ -1,0 +1,8 @@
+ul class="nav nav-tabs"
+  li = link_to tag_icon(:list, pat(:list)), url(:turntweets, :index)
+  li = link_to tag_icon(:plus, pat(:new)), url(:turntweets, :new)
+  li class="active" = link_to tag_icon(:edit, pat(:edit)), url(:turntweets, :edit, :id => @turntweet.id)
+
+div class="tabs-content"
+  = form_for :turntweet, url(:turntweets, :update, :id => @turntweet.id), :method => :put, :class => 'form-horizontal' do |f|
+    = partial 'turntweets/form', :locals => { :f => f }
