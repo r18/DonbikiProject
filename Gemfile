@@ -14,8 +14,10 @@ source 'https://rubygems.org'
 gem 'rake'
 
 # Component requirements
+gem 'bcrypt'
 gem 'slim'
-gem 'activerecord', '>= 3.1', :require => 'active_record'
+gem 'activesupport', '4.0.3'
+gem 'activerecord', '4.0.3', :require => 'active_record'
 gem 'sqlite3'
 
 # Test requirements
