@@ -32,6 +32,7 @@ div class="tabs-content"
         th class='header' = mat(:dtweet, :turnId)
         th class='header' = mat(:dtweet, :created_at)
         th class='header' = mat(:dtweet, :updated_at)
+        th class='header' = mat(:dtweet, :user_id)
         th class='header list-row-action-header'
 
     tbody
@@ -45,6 +46,7 @@ div class="tabs-content"
           td class='list-column' = dtweet.turnId
           td class='list-column' = time_ago_in_words dtweet.created_at
           td class='list-column' = time_ago_in_words dtweet.updated_at
+          td class='list-column' = dtweet.user_id
           td class='list-column list-row-action'
             div class='list-row-action-wrapper'
               = link_to tag_icon(:edit), :href => url(:dtweets, :edit, :id => dtweet.id), :rel => :tooltip, :title => "#{pat(:edit)} dtweet", :class => 'list-row-action-wrapper-link'

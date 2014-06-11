@@ -20,6 +20,10 @@ gem 'activesupport', '4.0.3'
 gem 'activerecord', '4.0.3', :require => 'active_record'
 gem 'sqlite3'
 
+gem 'resque'
+gem 'resque-scheduler'
+gem 'SystemTimer', :platform => :ruby_18
+
 # Test requirements
 gem 'rspec', :group => 'test'
 gem 'rack-test', :require => 'rack/test', :group => 'test'
@@ -34,3 +38,4 @@ gem 'padrino', '0.12.1'
 # %w(core support gen helpers cache mailer admin).each do |g|
 #   gem 'padrino-' + g, '0.12.1'
 # end
+gem 'twitter'

@@ -1,1 +1,8 @@
-// Put your application scripts here
+function main(){
+
+}
+
+
+function load(){
+
+}
