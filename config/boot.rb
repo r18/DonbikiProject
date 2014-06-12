@@ -41,6 +41,13 @@ end
 # Add your after (RE)load hooks here
 #
 Padrino.after_load do
+      Resque.set_schedule('Crawler', 
+                          { :cron => '* * * * *', 
+                            :class => 'Worker',
+                            :queue => 'twitter', 
+                            :args => 'hoge', 
+                            :description => 'Crawling Tweets' }
+                         )
 end
 
 Padrino.load!

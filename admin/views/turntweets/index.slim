@@ -26,10 +26,10 @@ div class="tabs-content"
                       = submit_tag  pat(:delete), :class =>'list-menu-popover-delete-selected-btn btn btn-danger btn-small'
                       div class='btn btn-default btn-small cancel' = pat(:cancel)
         th class='header' = mat(:turntweet, :id)
-        th class='header' = mat(:turntweet, :user)
+        th class='header' = mat(:turntweet, :user_id)
         th class='header' = mat(:turntweet, :tweetId)
         th class='header' = mat(:turntweet, :body)
-        th class='header' = mat(:turntweet, :replyId)
+        th class='header' = mat(:turntweet, :dtweet_id)
         th class='header' = mat(:turntweet, :created_at)
         th class='header' = mat(:turntweet, :updated_at)
         th class='header list-row-action-header'
@@ -39,10 +39,10 @@ div class="tabs-content"
         tr class='list-row'
           td class='list-column list-selectable' = check_box_tag 'turntweet_ids[]', :value => turntweet.id, :class => 'list-selectable-checkbox'
           td class='list-column' = turntweet.id
-          td class='list-column' = turntweet.user
+          td class='list-column' = turntweet.user_id
           td class='list-column' = turntweet.tweetId
           td class='list-column' = turntweet.body
-          td class='list-column' = turntweet.replyId
+          td class='list-column' = turntweet.dtweet_id
           td class='list-column' = time_ago_in_words turntweet.created_at
           td class='list-column' = time_ago_in_words turntweet.updated_at
           td class='list-column list-row-action'

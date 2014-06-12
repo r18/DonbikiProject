@@ -28,8 +28,6 @@ div class="tabs-content"
         th class='header' = mat(:user, :id)
         th class='header' = mat(:user, :name)
         th class='header' = mat(:user, :userId)
-        th class='header' = mat(:user, :dtweetId)
-        th class='header' = mat(:user, :turnTweetId)
         th class='header' = mat(:user, :created_at)
         th class='header' = mat(:user, :updated_at)
         th class='header list-row-action-header'
@@ -41,8 +39,6 @@ div class="tabs-content"
           td class='list-column' = user.id
           td class='list-column' = user.name
           td class='list-column' = user.userId
-          td class='list-column' = user.dtweetId
-          td class='list-column' = user.turnTweetId
           td class='list-column' = time_ago_in_words user.created_at
           td class='list-column' = time_ago_in_words user.updated_at
           td class='list-column list-row-action'

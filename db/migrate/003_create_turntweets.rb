@@ -1,10 +1,10 @@
 class CreateTurntweets < ActiveRecord::Migration
   def self.up
     create_table :turntweets do |t|
-      t.string :user
+      t.belongs_to:user
       t.string :tweetId
       t.text :body
-      t.string :replyId
+      t.belongs_to :dtweet
       t.timestamps
     end
   end
