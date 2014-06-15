@@ -12,24 +12,19 @@ module DonbikiProject
     enable :sessions
 
     get '/' do
-      @tweets = Dtweet.all.order("tweetId desc").limit(20)
+      start = params[:start]||=0
+      length = params[:length]||=20
+      @tweets = Dtweet.all.order("tweetId desc").offset(start).limit(length)
       render 'tweets/index'
     end
 
-    get '/tweets' do
-      start = params[:start].to_i
-      length = params[:length].to_i
-      Dtweet.joins(:user).order("tweetId desc").offset(start).limit(length).to_json
-    end
-
-
-    get '/resque' do
-      mount Resque::Server.new
+    get '/user' do 
+      @users = User.joins(:turntweet).all
+      render 'user/index'
     end
 
     get'/crawl' do
-      c = Crawler.new
-      c.crawl
+      Crawler.new.crawl
     end
 
     get '/twitter' do

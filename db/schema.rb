@@ -27,6 +27,8 @@ ActiveRecord::Schema.define(version: 4) do
     t.integer  "user_id"
     t.string   "tweetId"
     t.text     "body"
+    t.string   "uri"
+    t.string   "tweetCreatedAt"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -36,6 +38,8 @@ ActiveRecord::Schema.define(version: 4) do
     t.string   "tweetId"
     t.text     "body"
     t.integer  "dtweet_id"
+    t.string   "uri"
+    t.string   "tweetCreatedAt"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -43,6 +47,7 @@ ActiveRecord::Schema.define(version: 4) do
   create_table "users", force: true do |t|
     t.string   "name"
     t.string   "userId"
+    t.string   "profile_image_url"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

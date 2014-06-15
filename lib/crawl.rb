@@ -22,9 +22,11 @@ class Crawler
     if (not dtweet == nil ) && (not user == nil) then
       t = Turntweet.new
       t.tweetId = tweet.id
-      t.body  = fetch_oembed tweet.id
+      t.body  = tweet.text
       t.dtweet = dtweet
       t.user = user 
+      t.uri = tweet.uri.to_s
+      t.tweetCreatedAt = tweet.created_at.to_s
       t.save
     end
   end
@@ -37,7 +39,7 @@ class Crawler
       rescue 
         return nil
       end 
-      res = fetch_oembed tweet.id
+      res = tweet.text
       user = save_user tweet.user
       if (not res) && (not user) then
         return nil
@@ -46,6 +48,8 @@ class Crawler
         t.tweetId = tweet.id
         t.body = res
         t.user = user
+        t.uri = tweet.uri.to_s
+        t.tweetCreatedAt = tweet.created_at.to_s
         t.save
       end
     end
@@ -58,6 +62,7 @@ class Crawler
       t = User.new
       t.name = user.screen_name
       t.userId = user.id
+      t.profile_image_url =  user.profile_image_url.to_s
       t.save
     end
     return t

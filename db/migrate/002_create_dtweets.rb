@@ -4,6 +4,8 @@ class CreateDtweets < ActiveRecord::Migration
       t.belongs_to :user
       t.string :tweetId
       t.text :body
+      t.string :uri
+      t.string :tweetCreatedAt
       t.timestamps
     end
   end

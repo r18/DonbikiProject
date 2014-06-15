@@ -1,0 +1,17 @@
+doctype html
+html
+  head
+    meta charset="utf-8"
+    title ドン引き.com
+    = stylesheet_link_tag 'bootstrap-theme.min'
+    = javascript_include_tag 'jquery', 'bootstrap.min','app'
+  css:
+    li {
+      float:left;
+      list-style-type:none; 
+      width:35%;
+    }
+  body onload="main()"
+    = partial 'layouts/header'
+    = partial 'layouts/tweet' ,:collection=>@tweets
+    

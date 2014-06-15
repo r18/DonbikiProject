@@ -1,0 +1,7 @@
+.user-name 
+  =user.name
+.tweet_count 
+  ="ドン引きされた呟き:"+user.dtweet.all.length.to_s
+.tweets
+  = partial 'layouts/tweet' , :collection=>user.dtweet
+

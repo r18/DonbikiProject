@@ -5,6 +5,8 @@ class CreateTurntweets < ActiveRecord::Migration
       t.string :tweetId
       t.text :body
       t.belongs_to :dtweet
+      t.string :uri
+      t.string :tweetCreatedAt
       t.timestamps
     end
   end
