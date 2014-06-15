@@ -1,6 +1,7 @@
 .tweet
   .name= link_to tweet.user.name ,'/user/'+tweet.user.name
-  img src=tweet.user.profile_image_url
+  a.profile href="https://twitter.com/#{tweet.user.name}"
+    img src=tweet.user.profile_image_url
   .text==tweet.body
   .date=tweet.tweetCreatedAt
   .rt_link=link_to "RT", "https://twitter.com/intent/retweet?tweet_id="+tweet.tweetId 

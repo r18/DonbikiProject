@@ -13,8 +13,9 @@ module DonbikiProject
 
     get '/' do
       start = params[:start]||=0
-      length = params[:length]||=20
-      @tweets = Dtweet.all.order("tweetId desc").offset(start).limit(length)
+      @length = params[:length]||=20
+      @tweets = Dtweet.all.order("tweetId desc").offset(start).limit(@length)
+      @pages = Dtweet.all.length/@length.to_i
       render 'tweets/index'
     end
 
