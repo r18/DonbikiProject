@@ -19,7 +19,7 @@ gem 'slim'
 gem 'activesupport', '4.0.3'
 gem 'activerecord', '4.0.3', :require => 'active_record'
 gem 'sqlite3'
-
+gem 'mysql2'
 gem 'resque'
 gem 'resque-scheduler'
 gem 'SystemTimer', :platform => :ruby_18

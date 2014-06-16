@@ -3,14 +3,6 @@
 #
 #   ActiveRecord::Base.configurations[:development] = {
 #     :adapter   => 'mysql2',
-#     :encoding  => 'utf8',
-#     :reconnect => true,
-#     :database  => 'your_database',
-#     :pool      => 5,
-#     :username  => 'root',
-#     :password  => '',
-#     :host      => 'localhost',
-#     :socket    => '/tmp/mysql.sock'
 #   }
 #
 ActiveRecord::Base.configurations[:development] = {
@@ -20,8 +12,15 @@ ActiveRecord::Base.configurations[:development] = {
 }
 
 ActiveRecord::Base.configurations[:production] = {
-  :adapter => 'sqlite3',
-  :database => Padrino.root('db', 'donbiki_project_production.db')
+  :adapter => 'mysql2',
+     :encoding  => 'utf8',
+     :reconnect => true,
+     :database  => 'donbiki',
+     :pool      => 5,
+     :username  => 'root',
+     :password  => '',
+     :host      => 'localhost',
+     :socket    => '/tmp/mysql.sock'
 
 }
 
