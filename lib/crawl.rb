@@ -29,6 +29,7 @@ class Crawler
       t.tweetCreatedAt = tweet.created_at.to_s
       t.save
     end
+    dtweet.try(:body).to_s
   end
 
   def save_dtweet_from_id id
@@ -75,9 +76,12 @@ class Crawler
       config.access_token= ENV['TWITTER_ACCESS_TOKEN']
       config.access_token_secret= ENV['TWITTER_ACCESS_TOKEN_SECRET']
     end
+    res = []
     @client.search("%22%e3%83%89%e3%83%b3%e5%bc%95%e3%81%8d%2ecom%22 -rt", :count => 10, :result_type => "recent").collect do |tweet|
-      save_turntweet tweet
+      res.push tweet.user.screen_name.to_s
+      res.push tweet.text.to_s
+      res.push save_turntweet tweet
     end
-    "hoge"
+    res.to_s
   end
 end

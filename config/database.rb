@@ -18,9 +18,9 @@ ActiveRecord::Base.configurations[:production] = {
      :database  => 'donbiki',
      :pool      => 5,
      :username  => 'root',
-     :password  => '',
+     :password  => 'k3142413',
      :host      => 'localhost',
-     :socket    => '/tmp/mysql.sock'
+     :socket    => '/var/lib/mysql/mysql.sock'
 
 }
 
